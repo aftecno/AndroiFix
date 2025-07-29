@@ -3,460 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AndroiFix - Servicios y Accesorios</title>
-   <link rel="stylesheet" href="style.css" type="text/css" media="all" />
-</head>
-<body>
-    <header>
-        <nav class="container">
-            <div class="logo">AndroiFix 🚀</div>
+    <title>TechStore - Servicios y Accesorios</title>
+        <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    </head>
+    <body>
+    <!-- Header -->
+    <header class="glass">
+        <nav>
+            <div class="logo">TechStore</div>
             <ul class="nav-links">
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#accesorios">Accesorios</a></li>
-                <li><a href="#info">Contacto</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
             <button class="cart-btn" onclick="toggleCart()">
                 🛒 Carrito
                 <span class="cart-count" id="cartCount">0</span>
             </button>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
-    <main class="container">
-        <!-- Servicios Section -->
-        <section id="servicios">
-            <h2>Nuestros Servicios</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?w=400&h=400&fit=crop&crop=center" alt="Reparación de Pantallas">
-                    </div>
-                    <h3>Reparación de Pantallas</h3>
-                    <p>Cambiamos pantallas rotas de todas las marcas y modelos. Garantía de 5 días en todos nuestros trabajos.</p>
-                    <button class="contact-btn" onclick="sendWhatsApp('Consulta sobre reparación de pantallas')">Consultar</button>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="service-img/Bateria1.jpeg" alt="Cambio de Baterías">
-                    </div>
-                    <h3>Cambio de Baterías</h3>
-                    <p>Baterías originales y compatibles. Tu teléfono como nuevo con mayor duración de carga.</p>
-                    <button class="contact-btn" onclick="sendWhatsApp('Consulta sobre cambio de baterías')">Consultar</button>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="service-img/Iphone3.jpg" alt="Desbloqueos de Iphone">
-                    </div>
-                    <h3>Software</h3>
-                    <p>Especializado en software, desbloqueos, cuenta de google, icloud y mas..</p>
-                    <button class="contact-btn" onclick="sendWhatsApp('Consulta sobre software')">Consultar</button>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=400&fit=crop&crop=center" alt="Pin De Carga">
-                    </div>
-                    <h3>Pin De Carga</h3>
-                    <p>Limpieza interna, cambios de pin todo los modelos</p>
-                    <button class="contact-btn" onclick="sendWhatsApp('Consulta sobre pin de carga')">Consultar</button>
-                </div>
+    <!-- Services Section -->
+    <section id="servicios" style="padding-top: 8rem;">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="services-grid">
+            <div class="service-card glass-card">
+                <div class="service-image">💻</div>
+                <h3>Reparación de Computadoras</h3>
+                <p>Servicio técnico especializado en reparación y mantenimiento de equipos de escritorio y portátiles.</p>
+                <button class="service-btn" onclick="consultService('Reparación de Computadoras')">Consultar Servicio</button>
             </div>
-        </section>
+            <div class="service-card glass-card">
+                <div class="service-image">📱</div>
+                <h3>Reparación de Celulares</h3>
+                <p>Expertos en reparación de smartphones, cambio de pantallas, baterías y más.</p>
+                <button class="service-btn" onclick="consultService('Reparación de Celulares')">Consultar Servicio</button>
+            </div>
+            <div class="service-card glass-card">
+                <div class="service-image">🔧</div>
+                <h3>Soporte Técnico</h3>
+                <p>Asistencia técnica remota y presencial para resolver problemas informáticos.</p>
+                <button class="service-btn" onclick="consultService('Soporte Técnico')">Consultar Servicio</button>
+            </div>
+        </div>
+    </section>
 
-        <!-- Accesorios Section -->
-        <section id="accesorios">
-            <h2>Accesorios</h2>
-            <div class="products-grid" id="productsGrid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="img/Hdmi3.png" alt="Cable HDMI 3 Metros SOUL">
-                    </div>
-                    <div class="product-info">
-                        <h3>Cable HDMI 3 Metros SOUL</h3>
-                        <div class="product-price">
-                            $6.500
-                            <span class="offer-badge">20% OFF</span>
-                        </div>
-                        <div class="stock-status in-stock">✅ Disponible</div>
-                        <button  class="add-to-cart" onclick="addToCart('Cable HDMI 3 Metros SOUL', 6500, 5200)">Agregar al Carrito</button>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="img/Cableusbtc.jpg" alt="Cable USB Tipo C XAEA">
-                    </div>
-                    <div class="product-info">
-                        <h3>Cable USB Tipo C XAEA</h3>
-                        <div class="product-price">$3.000</div>
-                        <div class="stock-status in-stock">✅ Disponible</div>
-                        <button class="add-to-cart" onclick="addToCart('Cable USB Tipo C XAEA', 3000)">Agregar al Carrito</button>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="img/Cargadortc.jpg" alt="Cargador Tipo C Mixor">
-                    </div>
-                    <div class="product-info">
-                        <h3>Cargador Tipo C Mixor</h3>
-                        <div class="product-price">
-                            $6.000
-                            <span class="offer-badge">OFERTA</span>
-                        </div>
-                        <div class="stock-status in-stock">✅ Disponible</div>
-                        <button class="add-to-cart" onclick="addToCart('Cargador Tipo C Mixor', 6000)">Agregar al Carrito</button>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="img/Combodinax1.png" alt="Combo Mouse y Teclado Inalambrico">
-                    </div>
-                    <div class="product-info">
-                        <h3>Combo Mouse y Teclado Inalambrico</h3>
-                        <div class="product-price">$18.000</div>
-                        <div class="stock-status out-stock">❌ Sin Stock</div>
-                        <button class="add-to-cart" disabled>Sin Stock</button>
-                    </div>
-                </div>
+    <!-- Accessories Section -->
+    <section id="accesorios">
+        <h2 class="section-title">Accesorios</h2>
+        <div class="accessories-grid" id="accessoriesGrid">
+            <!-- Initial accessories -->
+            <div class="accessory-card glass-card">
+                <div class="offer-badge">20% OFF</div>
+                <div class="accessory-image">🎧</div>
+                <h3>Auriculares Gaming</h3>
+                <p class="price">$15.000</p>
+                <button class="add-to-cart" onclick="addToCart('Auriculares Gaming', 15000, '🎧')">Agregar al Carrito</button>
             </div>
-            <button class="show-more-btn" onclick="showMoreProducts()">Ver más accesorios</button>
-        </section>
+            <div class="accessory-card glass-card">
+                <div class="accessory-image">⌨️</div>
+                <h3>Teclado Mecánico</h3>
+                <p class="price">$25.000</p>
+                <button class="add-to-cart" onclick="addToCart('Teclado Mecánico', 25000, '⌨️')">Agregar al Carrito</button>
+            </div>
+            <div class="accessory-card glass-card">
+                <div class="offer-badge">15% OFF</div>
+                <div class="accessory-image">🖱️</div>
+                <h3>Mouse Gamer</h3>
+                <p class="price">$12.000</p>
+                <button class="add-to-cart" onclick="addToCart('Mouse Gamer', 12000, '🖱️')">Agregar al Carrito</button>
+            </div>
+            <div class="accessory-card glass-card">
+                <div class="accessory-image">💾</div>
+                <h3>SSD 500GB</h3>
+                <p class="price">$35.000</p>
+                <button class="add-to-cart" onclick="addToCart('SSD 500GB', 35000, '💾')">Agregar al Carrito</button>
+            </div>
+        </div>
 
-        <!-- Horario y Ubicación -->
-        <section id="info">
-            <h2>Horario y Ubicación</h2>
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3>🕒 Horarios de Atención</h3>
-                    <p><strong>Lunes a Viernes:</strong> 10:30 - 19:00</p>
-                    <p><strong>Sábados:</strong> 11:00 - 18:00</p>
-                    <p><strong>Domingos:</strong> Cerrado</p>
-                </div>
-                <div class="info-card">
-                    <h3>📍 Ubicación</h3>
-                    <p><strong>Dirección:</strong>Davalos 4032</p>
-                    <p><strong>Ciudad:</strong> Corrientes, Capital</p>
-                    <p><strong>Teléfono:</strong> +543794-141663</p>
-                    <p><strong>Email:</strong> androifix@hotmail.com</p>
-                </div>
+        <!-- Additional accessories (hidden initially) -->
+        <div class="accessories-grid hidden" id="moreAccessories">
+            <div class="accessory-card glass-card">
+                <div class="offer-badge">30% OFF</div>
+                <div class="accessory-image">📱</div>
+                <h3>Funda para Celular</h3>
+                <p class="price">$3.500</p>
+                <button class="add-to-cart" onclick="addToCart('Funda para Celular', 3500, '📱')">Agregar al Carrito</button>
             </div>
-        </section>
-    </main>
+            <div class="accessory-card glass-card">
+                <div class="accessory-image">🔌</div>
+                <h3>Cargador USB-C</h3>
+                <p class="price">$8.000</p>
+                <button class="add-to-cart" onclick="addToCart('Cargador USB-C', 8000, '🔌')">Agregar al Carrito</button>
+            </div>
+            <div class="accessory-card glass-card">
+                <div class="accessory-image">🎮</div>
+                <h3>Control Bluetooth</h3>
+                <p class="price">$18.000</p>
+                <button class="add-to-cart" onclick="addToCart('Control Bluetooth', 18000, '🎮')">Agregar al Carrito</button>
+            </div>
+            <div class="accessory-card glass-card">
+                <div class="offer-badge">25% OFF</div>
+                <div class="accessory-image">🔊</div>
+                <h3>Parlante Bluetooth</h3>
+                <p class="price">$22.000</p>
+                <button class="add-to-cart" onclick="addToCart('Parlante Bluetooth', 22000, '🔊')">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <button class="show-more-btn" id="showMoreBtn" onclick="toggleAccessories()">Ver Más</button>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto">
+        <h2 class="section-title">Horario y Ubicación</h2>
+        <div class="contact-info">
+            <div class="info-card glass-card">
+                <div class="info-icon">🕒</div>
+                <h3>Horario de Atención</h3>
+                <p>Lunes a Viernes: 9:00 - 18:00</p>
+                <p>Sábados: 9:00 - 13:00</p>
+                <p>Domingos: Cerrado</p>
+            </div>
+            <div class="info-card glass-card">
+                <div class="info-icon">📍</div>
+                <h3>Ubicación</h3>
+                <p>Av. Principal 123</p>
+                <p>Centro, Ciudad</p>
+                <p>CP: 1234</p>
+            </div>
+            <div class="info-card glass-card">
+                <div class="info-icon">📞</div>
+                <h3>Contacto</h3>
+                <p>WhatsApp: +543794141663</p>
+                <p>Email: info@techstore.com</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Cart Modal -->
     <div class="cart-modal" id="cartModal">
-        <div class="cart-content">
+        <div class="cart-content glass">
             <div class="cart-header">
-                <h3>Tu Carrito</h3>
+                <h3>Carrito de Compras</h3>
                 <button class="close-cart" onclick="toggleCart()">✕</button>
             </div>
             <div id="cartItems"></div>
-            <div class="cart-total" id="cartTotal">Total: $0</div>
-            <button class="checkout-btn" onclick="showPaymentModal()">Finalizar Compra</button>
+            <div class="cart-total">
+                Total: $<span id="cartTotal">0</span>
+            </div>
+            <button class="checkout-btn" onclick="showPaymentOptions()" id="checkoutBtn" disabled>Finalizar Compra</button>
         </div>
     </div>
 
     <!-- Payment Modal -->
     <div class="payment-modal" id="paymentModal">
-        <div class="payment-content">
-            <h3>Finalizar Compra</h3>
-            <div class="form-group">
-                <label>Opción de Entrega:</label>
-                <button class="payment-method" onclick="selectDelivery('retiro')">🏪 Retiro en Local</button>
-                <button class="payment-method" onclick="selectDelivery('envio')">🚚 Envío a Domicilio (+$2,500)</button>
-            </div>
-
-            <div class="form-group">
-                <label>Método de Pago:</label>
-                <button class="payment-method" onclick="selectPayment('efectivo')">💵 Efectivo</button>
-                <button class="payment-method" onclick="selectPayment('transferencia')">🏦 Transferencia</button>
-            </div>
-            
-            <div id="transferData" class="hidden">
-                <div class="form-group">
-                    <label>Alias para transferencia:</label>
-                    <strong>axeldelsol</strong>
+        <div class="payment-content glass">
+            <h3>Opciones de Entrega</h3>
+            <div>
+                <div class="shipping-option">
+                    <label>
+                        <input type="radio" name="shipping" value="pickup" checked>
+                        Retiro en tienda - Gratis
+                    </label>
+                </div>
+                <div class="shipping-option">
+                    <label>
+                        <input type="radio" name="shipping" value="delivery">
+                        Envío a domicilio - $2.500
+                    </label>
                 </div>
             </div>
-
-            <div class="form-group">
-                <label>Nombre:</label>
-                <input type="text" id="customerName" required>
-            </div>
-            <div class="form-group">
-                <label>Teléfono:</label>
-                <input type="tel" id="customerPhone" required>
-            </div>
-            <div class="form-group">
-                <label>Dirección <span id="addressLabel">(opcional)</span>:</label>
-                <textarea id="customerAddress" rows="3" placeholder="Ingresa tu dirección completa si seleccionaste envío a domicilio"></textarea>
-            </div>
-            <button class="checkout-btn" onclick="confirmOrder()">Confirmar Pedido</button>
-            <button class="contact-btn" onclick="closePaymentModal()" style="margin-top: 1rem; width: 100%;">Cancelar</button>
+            
+            <h3 style="margin-top: 2rem;">Método de Pago</h3>
+            <button class="payment-option" onclick="processPayment('efectivo')">💵 Pagar en Efectivo</button>
+            <button class="payment-option" onclick="processPayment('transferencia')">🏦 Transferencia Bancaria</button>
+            <button class="payment-option" onclick="closePaymentModal()" style="background: #6b7280;">Cancelar</button>
         </div>
     </div>
 
     <script>
+        // Variables globales
         let cart = [];
-        let selectedPayment = '';
-        let selectedDelivery = '';
-        let deliveryCost = 0;
-        let allProducts = [
-            {name: 'Funda Transparente', price: 1500, offerPrice: 1200, stock: true, image: 'https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=300&fit=crop&crop=center'},
-            {name: 'Cargador Rápido', price: 2800, stock: true, image: 'https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400&h=300&fit=crop&crop=center'},
-            {name: 'Vidrio Templado', price: 800, stock: true, image: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400&h=300&fit=crop&crop=center'},
-            {name: 'Auriculares Bluetooth', price: 4500, stock: false, image: 'https://images.unsplash.com/photo-1484704849700-f032a568e944?w=400&h=300&fit=crop&crop=center'},
-            {name: 'Cable USB PS3 Cargador', price: 3500, stock: true, image: 'img/Cableusbps3.jpg'},
-            {name: 'Cable USB Iphone ROYALCELL', price: 3000, stock: true, image: 'img/Cableusbiph.jpg'},
-            {name: 'Vidrios Templados', price: 3500, offerPrice: 3000, stock: true, image: 'img/Templados.png'},
-            {name: 'Cargador V8 Mixor', price: 4500, stock: true, image: 'img/Cargadorv8.jpg'}
-        ];
-        let showingAll = false;
+        let showingMore = false;
 
-        function addToCart(name, price, offerPrice = null) {
-            const finalPrice = offerPrice || price;
-            const existingItem = cart.find(item => item.name === name);
-            
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({name, price: finalPrice, quantity: 1});
-            }
-            
-            updateCartUI();
-        }
-
-        function removeFromCart(name) {
-            cart = cart.filter(item => item.name !== name);
-            updateCartUI();
-        }
-
-        function updateCartUI() {
-            const cartCount = document.getElementById('cartCount');
-            const cartItems = document.getElementById('cartItems');
-            const cartTotal = document.getElementById('cartTotal');
-            
-            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            const totalPrice = subtotal + deliveryCost;
-            
-            cartCount.textContent = totalItems;
-            
-            let cartHTML = cart.map(item => `
-                <div class="cart-item">
-                    <div>
-                        <strong>${item.name}</strong><br>
-                        ${item.price.toLocaleString()} x ${item.quantity}
-                    </div>
-                    <button onclick="removeFromCart('${item.name}')" style="background: #ff4757; color: white; border: none; padding: 0.5rem; border-radius: 5px; cursor: pointer;">Eliminar</button>
-                </div>
-            `).join('');
-            
-            if (deliveryCost > 0) {
-                cartHTML += `
-                    <div class="cart-item">
-                        <div>
-                            <strong>🚚 Envío a Domicilio</strong><br>
-                            Costo de envío
-                        </div>
-                        <div>${deliveryCost.toLocaleString()}</div>
-                    </div>
-                `;
-            }
-            
-            cartItems.innerHTML = cartHTML;
-            
-            if (deliveryCost > 0) {
-                cartTotal.innerHTML = `
-                    <div>Subtotal: ${subtotal.toLocaleString()}</div>
-                    <div>Envío: ${deliveryCost.toLocaleString()}</div>
-                    <div style="border-top: 2px solid #667eea; padding-top: 0.5rem; margin-top: 0.5rem;">
-                        <strong>Total: ${totalPrice.toLocaleString()}</strong>
-                    </div>
-                `;
-            } else {
-                cartTotal.textContent = `Total: ${totalPrice.toLocaleString()}`;
-            }
-        }
-
-        function toggleCart() {
-            const modal = document.getElementById('cartModal');
-            modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
-        }
-
-        function showPaymentModal() {
-            if (cart.length === 0) {
-                alert('Tu carrito está vacío');
-                return;
-            }
-            document.getElementById('cartModal').style.display = 'none';
-            document.getElementById('paymentModal').style.display = 'block';
-        }
-
-        function closePaymentModal() {
-            document.getElementById('paymentModal').style.display = 'none';
-        }
-
-        function selectDelivery(method) {
-            selectedDelivery = method;
-            document.querySelectorAll('.payment-method').forEach(btn => {
-                if (btn.textContent.includes('Retiro') || btn.textContent.includes('Envío')) {
-                    btn.classList.remove('selected');
-                }
-            });
-            event.target.classList.add('selected');
-            
-            const addressLabel = document.getElementById('addressLabel');
-            const addressField = document.getElementById('customerAddress');
-            
-            if (method === 'envio') {
-                deliveryCost = 2500;
-                addressLabel.textContent = '(requerido)';
-                addressLabel.style.color = '#ff4757';
-                addressField.required = true;
-                addressField.placeholder = 'Ingresa tu dirección completa para el envío';
-            } else {
-                deliveryCost = 0;
-                addressLabel.textContent = '(opcional)';
-                addressLabel.style.color = '#666';
-                addressField.required = false;
-                addressField.placeholder = 'Dirección opcional si deseas recibirlo en otro lugar';
-            }
-            
-            updateCartUI();
-        }
-
-        function selectPayment(method) {
-            selectedPayment = method;
-            document.querySelectorAll('.payment-method').forEach(btn => {
-                if (btn.textContent.includes('Efectivo') || btn.textContent.includes('Transferencia')) {
-                    btn.classList.remove('selected');
-                }
-            });
-            event.target.classList.add('selected');
-            
-            const transferData = document.getElementById('transferData');
-            if (method === 'transferencia') {
-                transferData.classList.remove('hidden');
-            } else {
-                transferData.classList.add('hidden');
-            }
-        }
-
-        function confirmOrder() {
-            const name = document.getElementById('customerName').value;
-            const phone = document.getElementById('customerPhone').value;
-            const address = document.getElementById('customerAddress').value;
-            
-            if (!name || !phone || !selectedPayment || !selectedDelivery) {
-                alert('Por favor completa todos los campos obligatorios y selecciona método de pago y entrega');
-                return;
-            }
-            
-            if (selectedDelivery === 'envio' && !address) {
-                alert('Por favor ingresa tu dirección para el envío');
-                return;
-            }
-            
-            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            const total = subtotal + deliveryCost;
-            const itemsList = cart.map(item => `• ${item.name} x${item.quantity} - ${(item.price * item.quantity).toLocaleString()}`).join('\n');
-            
-            let paymentInfo = '';
-            if (selectedPayment === 'transferencia') {
-                paymentInfo = '\n🏦 *Método de pago:* Transferencia\n📝 *Alias:* axeldelsol';
-            } else {
-                paymentInfo = '\n💵 *Método de pago:* Efectivo';
-            }
-            
-            let deliveryInfo = '';
-            if (selectedDelivery === 'envio') {
-                deliveryInfo = `\n🚚 *Entrega:* Envío a domicilio\n📍 *Dirección:* ${address}\n💰 *Costo de envío:* ${deliveryCost.toLocaleString()}`;
-            } else {
-                deliveryInfo = '\n🏪 *Entrega:* Retiro en local';
-            }
-            
-            let totalBreakdown = '';
-            if (deliveryCost > 0) {
-                totalBreakdown = `\n💰 *Subtotal:* ${subtotal.toLocaleString()}\n🚚 *Envío:* ${deliveryCost.toLocaleString()}\n💵 *TOTAL:* ${total.toLocaleString()}`;
-            } else {
-                totalBreakdown = `\n💰 *Total:* ${total.toLocaleString()}`;
-            }
-            
-            const message = `🛒 *NUEVO PEDIDO - AndroiFix*\n\n👤 *Cliente:* ${name}\n📞 *Teléfono:* ${phone}${deliveryInfo}\n\n*Productos:*\n${itemsList}${totalBreakdown}${paymentInfo}\n\n¡Gracias por tu compra! 🚀`;
-            
-            const whatsappUrl = `https://wa.me/543794141663?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
-            
-            // Reset cart and close modals
-            cart = [];
-            selectedPayment = '';
-            selectedDelivery = '';
-            deliveryCost = 0;
-            updateCartUI();
-            closePaymentModal();
-            alert('¡Pedido enviado! Te contactaremos pronto por WhatsApp.');
-        }
-
-        function sendWhatsApp(message) {
-            const whatsappUrl = `https://wa.me/543794141663?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
-        }
-
-        function showMoreProducts() {
-            const grid = document.getElementById('productsGrid');
-            const button = document.querySelector('.show-more-btn');
-            
-            if (!showingAll) {
-                // Show more products
-                const additionalProducts = allProducts.slice(4).map(product => `
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="${product.image}" alt="${product.name}">
-                        </div>
-                        <div class="product-info">
-                            <h3>${product.name}</h3>
-                            <div class="product-price">
-                                ${product.price.toLocaleString()}
-                                ${product.offerPrice ? '<span class="offer-badge">OFERTA</span>' : ''}
-                            </div>
-                            <div class="stock-status ${product.stock ? 'in-stock' : 'out-stock'}">
-                                ${product.stock ? '✅ Disponible' : '❌ Sin Stock'}
-                            </div>
-                            <button class="add-to-cart" ${!product.stock ? 'disabled' : ''} 
-                                    onclick="addToCart('${product.name}', ${product.price}, ${product.offerPrice || 'null'})">
-                                ${product.stock ? 'Agregar al Carrito' : 'Sin Stock'}
-                            </button>
-                        </div>
-                    </div>
-                `).join('');
-                
-                grid.innerHTML += additionalProducts;
-                button.textContent = 'Mostrar menos';
-                showingAll = true;
-            } else {
-                // Hide additional products
-                const cards = grid.querySelectorAll('.product-card');
-                for (let i = 4; i < cards.length; i++) {
-                    cards[i].remove();
-                }
-                button.textContent = 'Ver más accesorios';
-                showingAll = false;
-            }
-        }
-
-        // Close modals when clicking outside
-        window.onclick = function(event) {
-            const cartModal = document.getElementById('cartModal');
-            const paymentModal = document.getElementById('paymentModal');
-            
-            if (event.target === cartModal) {
-                cartModal.style.display = 'none';
-            }
-            if (event.target === paymentModal) {
-                paymentModal.style.display = 'none';
-            }
-        }
-
-        // Smooth scrolling for navigation links
+        // Smooth scrolling para navegación
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -470,7 +206,262 @@
             });
         });
 
-        // Add animation on scroll
+        // Funciones del carrito
+        function addToCart(name, price, emoji) {
+            const existingItem = cart.find(item => item.name === name);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    emoji: emoji,
+                    quantity: 1
+                });
+            }
+            
+            updateCartDisplay();
+            showNotification(`${emoji} ${name} agregado al carrito`);
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartDisplay();
+        }
+
+        function updateQuantity(index, change) {
+            cart[index].quantity += change;
+            if (cart[index].quantity <= 0) {
+                removeFromCart(index);
+            } else {
+                updateCartDisplay();
+            }
+        }
+
+        function updateCartDisplay() {
+            const cartCount = document.getElementById('cartCount');
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            
+            // Actualizar contador
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            cartCount.style.display = totalItems > 0 ? 'flex' : 'none';
+            
+            // Actualizar contenido del carrito
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p style="text-align: center; color: #a3a3a3;">El carrito está vacío</p>';
+                cartTotal.textContent = '0';
+                checkoutBtn.disabled = true;
+                checkoutBtn.style.opacity = '0.5';
+            } else {
+                cartItems.innerHTML = cart.map((item, index) => `
+                    <div class="cart-item">
+                        <div>
+                            <span style="font-size: 1.2rem;">${item.emoji}</span>
+                            <strong>${item.name}</strong>
+                            <br>
+                            <small>${item.price.toLocaleString()}</small>
+                        </div>
+                        <div class="item-controls">
+                            <button class="qty-btn" onclick="updateQuantity(${index}, -1)">-</button>
+                            <span style="margin: 0 0.5rem;">${item.quantity}</span>
+                            <button class="qty-btn" onclick="updateQuantity(${index}, 1)">+</button>
+                            <button class="qty-btn" onclick="removeFromCart(${index})" style="background: #ef4444; margin-left: 0.5rem;">🗑️</button>
+                        </div>
+                    </div>
+                `).join('');
+                
+                const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                cartTotal.textContent = total.toLocaleString();
+                checkoutBtn.disabled = false;
+                checkoutBtn.style.opacity = '1';
+            }
+        }
+
+        function toggleCart() {
+            const cartModal = document.getElementById('cartModal');
+            cartModal.style.display = cartModal.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function toggleAccessories() {
+            const moreAccessories = document.getElementById('moreAccessories');
+            const showMoreBtn = document.getElementById('showMoreBtn');
+            
+            if (showingMore) {
+                moreAccessories.classList.add('hidden');
+                showMoreBtn.textContent = 'Ver Más';
+                showingMore = false;
+            } else {
+                moreAccessories.classList.remove('hidden');
+                moreAccessories.classList.add('fade-in');
+                showMoreBtn.textContent = 'Ver Menos';
+                showingMore = true;
+            }
+        }
+
+        function consultService(serviceName) {
+            const message = `Hola! Me interesa el servicio de ${serviceName}. ¿Podrían darme más información?`;
+            const whatsappUrl = `https://wa.me/543794141663?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        function showPaymentOptions() {
+            document.getElementById('paymentModal').style.display = 'flex';
+        }
+
+        function closePaymentModal() {
+            document.getElementById('paymentModal').style.display = 'none';
+        }
+
+        function processPayment(paymentMethod) {
+            const shippingMethod = document.querySelector('input[name="shipping"]:checked').value;
+            const isDelivery = shippingMethod === 'delivery';
+            const shippingCost = isDelivery ? 2500 : 0;
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const total = subtotal + shippingCost;
+            
+            // Crear mensaje para WhatsApp
+            let message = "🛒 *NUEVA COMPRA*\n\n";
+            message += "*Productos:*\n";
+            
+            cart.forEach(item => {
+                message += `${item.emoji} ${item.name}\n`;
+                message += `   Cantidad: ${item.quantity}\n`;
+                message += `   Precio unitario: ${item.price.toLocaleString()}\n`;
+                message += `   Subtotal: ${(item.price * item.quantity).toLocaleString()}\n\n`;
+            });
+            
+            message += `*Subtotal: ${subtotal.toLocaleString()}*\n`;
+            
+            if (isDelivery) {
+                message += `*Envío: ${shippingCost.toLocaleString()}*\n`;
+            } else {
+                message += `*Retiro en tienda: Gratis*\n`;
+            }
+            
+            message += `*TOTAL: ${total.toLocaleString()}*\n\n`;
+            
+            if (paymentMethod === 'efectivo') {
+                message += "💵 *Método de pago:* Efectivo\n";
+                if (isDelivery) {
+                    message += "📦 Se abonará al recibir el pedido\n";
+                } else {
+                    message += "🏪 Se abonará al retirar en tienda\n";
+                }
+            } else {
+                message += "🏦 *Método de pago:* Transferencia\n";
+                message += "💳 *Alias:* axeldelsol\n";
+                message += "📧 Enviar comprobante por favor\n";
+            }
+            
+            message += `\n${isDelivery ? '📦 Envío a domicilio' : '🏪 Retiro en tienda'}`;
+            message += "\n\n¡Gracias por tu compra! 🎉";
+            
+            // Abrir WhatsApp
+            const whatsappUrl = `https://wa.me/543794141663?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+            
+            // Mostrar confirmación
+            showConfirmation(paymentMethod, total, isDelivery);
+            
+            // Limpiar carrito
+            cart = [];
+            updateCartDisplay();
+            closePaymentModal();
+            toggleCart();
+        }
+
+        function showConfirmation(paymentMethod, total, isDelivery) {
+            const paymentText = paymentMethod === 'efectivo' ? 'Efectivo' : 'Transferencia';
+            const deliveryText = isDelivery ? 'Envío a domicilio' : 'Retiro en tienda';
+            
+            showNotification(
+                `✅ Pedido confirmado!\n💰 ${paymentText}\n📦 ${deliveryText}\n💵 Total: ${total.toLocaleString()}\n\n¡Nos contactaremos contigo por WhatsApp!`,
+                5000
+            );
+        }
+
+        function showNotification(message, duration = 3000) {
+            // Crear elemento de notificación
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                z-index: 4000;
+                font-weight: bold;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                animation: slideInRight 0.3s ease;
+                max-width: 300px;
+                white-space: pre-line;
+            `;
+            
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            // Eliminar después del tiempo especificado
+            setTimeout(() => {
+                notification.style.animation = 'slideOutRight 0.3s ease';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, duration);
+        }
+
+        // Añadir estilos CSS para animaciones de notificación
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideInRight {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            
+            @keyframes slideOutRight {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Cerrar modales al hacer clic fuera
+        document.getElementById('cartModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                toggleCart();
+            }
+        });
+
+        document.getElementById('paymentModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePaymentModal();
+            }
+        });
+
+        // Efecto parallax en scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('body::before');
+            
+            // Cambiar opacidad del header
+            const header = document.querySelector('header');
+            if (scrolled > 50) {
+                header.style.background = 'rgba(255, 255, 255, 0.1)';
+                header.style.backdropFilter = 'blur(20px)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.1)';
+                header.style.backdropFilter = 'blur(10px)';
+            }
+        });
+
+        // Animación de entrada para elementos
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -479,33 +470,106 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.classList.add('fade-in');
                 }
             });
         }, observerOptions);
 
-        // Observe all sections for animation
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(50px)';
-            section.style.transition = 'all 0.6s ease';
-            observer.observe(section);
+        // Observar elementos
+        document.querySelectorAll('.service-card, .accessory-card, .info-card').forEach(el => {
+            observer.observe(el);
         });
 
-        // Mobile menu toggle (for future enhancement)
-        function toggleMobileMenu() {
+        // Menu móvil
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
             const navLinks = document.querySelector('.nav-links');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
             navLinks.classList.toggle('mobile-active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Cerrar menú móvil al hacer clic en un enlace
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navLinks = document.querySelector('.nav-links');
+                const mobileMenu = document.querySelector('.mobile-menu');
+                
+                if (navLinks.classList.contains('mobile-active')) {
+                    navLinks.classList.remove('mobile-active');
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // Cerrar menú móvil al hacer clic fuera
+        document.addEventListener('click', (e) => {
+            const navLinks = document.querySelector('.nav-links');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const nav = document.querySelector('nav');
+            
+            if (!nav.contains(e.target) && navLinks.classList.contains('mobile-active')) {
+                navLinks.classList.remove('mobile-active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Inicializar
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartDisplay();
+            
+            // Añadir animación de carga
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Efecto de partículas en el cursor (opcional)
+        document.addEventListener('mousemove', (e) => {
+            if (Math.random() > 0.9) {
+                createParticle(e.clientX, e.clientY);
+            }
+        });
+
+        function createParticle(x, y) {
+            const particle = document.createElement('div');
+            particle.style.cssText = `
+                position: fixed;
+                left: ${x}px;
+                top: ${y}px;
+                width: 4px;
+                height: 4px;
+                background: linear-gradient(45deg, #8b5cf6, #06b6d4);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 1000;
+                animation: particleFloat 2s ease-out forwards;
+            `;
+            
+            document.body.appendChild(particle);
+            
+            setTimeout(() => {
+                document.body.removeChild(particle);
+            }, 2000);
         }
 
-        // Initialize cart UI
-        updateCartUI();
-
-        // Add loading animation
-        window.addEventListener('load', () => {
-            document.body.style.opacity = '1';
-        });
+        // Añadir animación de partículas
+        const particleStyle = document.createElement('style');
+        particleStyle.textContent = `
+            @keyframes particleFloat {
+                0% {
+                    transform: translateY(0) scale(1);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(-100px) scale(0);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(particleStyle);
     </script>
 </body>
 </html>
